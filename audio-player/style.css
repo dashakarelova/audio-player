@@ -2,6 +2,7 @@
 
 html,
 body {
+    font-size: 20px;
     height: 100%;
 }
 
@@ -12,67 +13,169 @@ body {
 }
 
 .audio_block {
-    background-image: url(./assets/jpg/Beyoncé-Dont_Hurt_Your_self_blur.jpg);
+    /* background-image: url(./assets/jpg/Beyonce_blur.jpg);
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: 100%; */
     display: grid;
     justify-content: center;
     align-items: center;
     flex: 1 0 auto;
 }
 
-.audio_cart {
-    /* background: linear-gradient(to right, #484848 0%, #888888 100%);
-    background: linear-gradient(to right, #404040 0%, #888888 100%); */
+.audio_player {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
     background: linear-gradient(to right, #404040 0%, #808080 100%);
     padding: 20px;
     width: 500px;
-    border-radius: 3%;
+    height: 600px;
+    border-radius: 5%;
     box-shadow: 0rem 0.3rem 0.7rem 0.1rem #000;
+    overflow: hidden;
 }
 
-.music_img {
+.picture_cart {
     width: 100%;
+    height: 400px;
+    background-image: url(./assets/jpg/Beyoncé-Dont_Hurt_Your_self.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: 0rem 0.3rem 0.7rem 0.1rem #000;
+    border-top-right-radius: 5%;
+    border-top-left-radius: 4%;
 }
 
-.audio_name {
-    color: #FFF;
+.audio_controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
 }
 
-.audio_name span {
-    color: #ADFF2F;
+.control {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
 }
 
-.progress_bar {
+.play-btn {
     position: relative;
-    width: 280px;
-    height: 5px;
-    border: 3px solid #000;
-    margin: 10px 0;
-}
-
-.progress_border {
-    position: absolute;
-    border: 3px solid #ADFF2F;
-    height: 100%;
-}
-
-.btn {
-    width: 46px;
-    height: 46px;
+    width: 56px;
+    height: 56px;
     border-radius: 50%;
-    border: solid #FFF;
+    border: solid #000;
     background-color: transparent;
 }
 
-.btn img {
-    margin-left: 3px;
-    background: transparent;
+.play-btn span {
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    transform: translateY(-50%);
+    width: 10px;
+    height: 30px;
+    border-radius: 2px;
+    background-color: #000;
+    transition: .5s;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.play-btn span:nth-child(2) {
+    left: 55%;
+}
+
+.play-btn.pause span:nth-child(2) {
+    transform: translateY(-50%) scaleY(0);
+}
+
+.play-btn.pause span:nth-child(1) {
+    width: 35%;
+    left: 53%;
+    transform: translate(-50%, -50%);
+    border-radius: 0;
+    clip-path: polygon(0 0, 100% 50%, 100% 50%, 0% 100%);
+}
+
+.play-btn.pause {
+    animation: pulse 2s linear infinite;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0;
+    }
+    50% {
+        box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.1);
+    }
+    100% {
+        box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.4);
+    }
+}
+
+.music-name  {
+    color: #FFF;
+}
+
+.artist-name {
+    font-size: 25px;
+    color: #ADFF2F;
+}
+
+.btn_next_prev {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.btn {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: solid #000;
+    background-color: transparent;
 }
 
 .prev_btn img {
     margin-right: 3px;
     transform: rotate(180deg);
+}
+
+.song-slider {
+    width: 80%;
+    position: relative;
+}
+
+.seek-bar {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 5px;
+    border-radius: 10px;
+    background: #000;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.seek-bar::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 10px;
+    height: 20px;
+    background: #ADFF2F;
+    /* box-shadow: -400px 0 0 400px #acff2f81; */
+}
+
+.song-slider span:nth-child(2) {
+    color: #FFF;
+}
+
+.song-slider span:nth-child(3) {
+    color: #ADFF2F;
+}
+
+.song-duration {
+    position: absolute;
+    right: 0;
 }
 
 .footer {
