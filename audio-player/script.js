@@ -67,6 +67,7 @@ seekBar.addEventListener('change', () => {
 const playMusic = () => {
     music.play();
     playBtn.classList.remove('pause');
+    picture.classList.add('play');
 }
 
 nextBtn.addEventListener('click', () => {
