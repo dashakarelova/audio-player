@@ -1,8 +1,8 @@
 let songs = [
     {
         name: 'Don\'t Hurt Yourself',
-        path: 'assets/audio/Beyoncé - Don\'t Hurt Yourself.mp3',
-        artist: 'Beyoncé',
+        path: 'assets/audio/Beyonce - Don\'t Hurt Yourself.mp3',
+        artist: 'Beyonce',
         cover: 'assets/jpg/Beyonce-Dont_Hurt_Your_self.jpg',
         back: 'assets/jpg/Beyonce_blur.jpg'
     },
