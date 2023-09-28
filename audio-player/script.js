@@ -20,6 +20,7 @@ playBtn.addEventListener('click', () => {
         music.pause();
     }
     playBtn.classList.toggle('pause');
+    picture.classList.toggle('play');
 })
 
 const setMusic = (i) => {
